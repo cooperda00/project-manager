@@ -1,0 +1,21 @@
+@import "../../../variables";
+
+.TaskList {
+    list-style: none;
+    padding-left: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    li {
+        @include flex(row, space-between, center);
+        margin-bottom: 1.5rem;
+        width: 100%;
+
+        button {
+            background: none;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

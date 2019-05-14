@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.Container {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.Project {
+    @include flex(column, flex-start, flex-start);
+
+    background: lighten($secondaryColor, 10%);
+    margin: 3rem 2rem;
+    padding: 1rem 2rem;
+
+    h1 {
+        font-size: $mediumText;
+        color: $primaryColor;
+    }
+}
+
+.Description {
+    margin-bottom: 2rem;
+}
+
+.Complete {
+    @include flex(row, space-between, center);
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.Controls {
+    @include flex(row, space-between, center);
+
+    width: 100%;
+
+    button {
+        @include button();
+
+        width: 11rem;
+    }
+}

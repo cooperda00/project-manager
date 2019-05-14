@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.ProjectCard {
+    @include flex(column, space-between);
+    border: 1px solid $lightGray;
+    height: 300px;
+    width: 90%;
+    padding: $mediumSpace;
+    margin: $mediumSpace 0;
+    max-width: 675px;
+}
+
+.TitleTime {
+    h1 {
+        color: $primaryColor;
+    }
+
+    p {
+        font-size: $extraSmallText;
+    }
+}
+
+.Description {
+}
+
+.TasksCompleted {
+    @include flex(row, space-between, center);
+}

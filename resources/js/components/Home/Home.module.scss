@@ -1,0 +1,27 @@
+@import "../variables";
+
+.Home {
+    @include flex(column, center, center);
+
+    height: 100%;
+    min-height: 80vh;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.Controls {
+    @include flex(row, space-around, center);
+
+    margin-top: 3rem;
+    max-width: 500px;
+    width: 100%;
+
+    button {
+        @include button();
+    }
+}
+
+.Colored {
+    color: $primaryColor;
+}

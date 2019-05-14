@@ -1,0 +1,55 @@
+//BASE STYLES
+@import "./variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+label,
+p,
+li,
+button,
+input,
+textarea,
+a,
+section,
+main,
+nav {
+    font-family: $fontStack;
+    color: $darkGray;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+// //NavLink active class
+
+.is-active {
+    font-weight: bold;
+}

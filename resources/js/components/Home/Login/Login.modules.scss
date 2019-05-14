@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.Login {
+    @include flex(column, flex-start, center);
+
+    margin-top: 3rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.FormControl {
+    @include flex(column, center, flex-start);
+
+    min-width: 300px;
+
+    label {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    input {
+        height: 3rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+}
+
+.LoginBtn {
+    @include button();
+}

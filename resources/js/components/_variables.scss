@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+//Colors
+$primaryColor: #e85a50;
+$primaryHighlight: #e88073;
+$secondaryColor: #eae8dc;
+$secondaryLowlight: #d8c3a4;
+$lightGray: #cccccc;
+$darkGray: darken(#8e8d89, 10%);
+
+//Font
+$extraSmallText: 1.3rem;
+$smallText: 1.8rem;
+$mediumText: 2.4rem;
+$largeText: 3.5rem;
+$fontStack: "Montserrat", sans-serif;
+
+//Spacing
+$smallSpace: 1rem;
+$mediumSpace: 2rem;
+$largeSpace: 4rem;
+
+//Mixins
+@mixin flex($dir: null, $just: null, $ali: null) {
+    display: flex;
+    @if $dir != null {
+        flex-direction: $dir;
+    }
+    @if $just != null {
+        justify-content: $just;
+    }
+    @if $ali != null {
+        align-items: $ali;
+    }
+}
+
+//Media Queries
+@mixin min-width($threshold) {
+    @media screen and (min-width: $threshold) {
+        @content;
+    }
+}
+
+@mixin button() {
+    background: transparent;
+    border: 1px solid $darkGray;
+    cursor: pointer;
+    font-size: $smallText;
+    height: 3.2rem;
+    transition: 0.3s;
+    width: 9rem;
+
+    &:hover {
+        background: $secondaryLowlight;
+    }
+}

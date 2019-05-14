@@ -1,0 +1,16 @@
+@import "../variables";
+
+.CompletedIcon {
+    border: 1px solid $darkGray;
+    height: 30px;
+    position: relative;
+    width: 30px;
+}
+
+.Tick {
+    color: $primaryColor;
+    font-size: 3.8rem;
+    left: 1px;
+    position: absolute;
+    top: -13px;
+}

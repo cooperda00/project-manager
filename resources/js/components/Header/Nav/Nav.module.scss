@@ -1,0 +1,13 @@
+@import "../../variables";
+
+.Nav {
+    @include flex(row, space-around, center);
+    // width: 60%;
+    a {
+        margin: 0 1rem;
+    }
+}
+
+.Logout {
+    cursor: pointer;
+}

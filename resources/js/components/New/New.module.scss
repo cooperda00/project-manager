@@ -1,0 +1,37 @@
+@import "../variables";
+
+.New {
+    @include flex(column, center, center);
+    width: 100%;
+    margin-top: 3rem;
+
+    h1 {
+        margin-bottom: 2rem;
+        color: $primaryColor;
+    }
+}
+
+.NewForm {
+    @include flex(column, center, flex-start);
+
+    input,
+    textarea {
+        display: block;
+        min-width: 300px;
+        margin-bottom: 2rem;
+        margin-top: 0.7rem;
+    }
+
+    input[type="text"] {
+        height: 2.8rem;
+    }
+
+    textarea {
+        height: 200px;
+        resize: none;
+    }
+}
+
+.CreateBtn {
+    @include button();
+}

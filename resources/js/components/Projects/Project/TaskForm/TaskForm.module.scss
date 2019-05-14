@@ -1,0 +1,20 @@
+@import "../../../variables";
+
+.TaskForm {
+    margin: 0 auto;
+
+    label {
+        margin-right: 1rem;
+    }
+
+    input {
+        height: 3rem;
+    }
+
+    button {
+        height: 3rem;
+        width: 6rem;
+        border: none;
+        border-left: none;
+    }
+}

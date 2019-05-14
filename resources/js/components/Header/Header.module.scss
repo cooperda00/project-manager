@@ -1,0 +1,15 @@
+@import "../variables";
+
+.Header {
+    @include flex(row, space-around, center);
+
+    background: $secondaryColor;
+    height: 20%;
+    min-height: 10vh;
+    padding: $smallSpace;
+    width: 100%;
+
+    h1 {
+        color: $primaryColor;
+    }
+}
