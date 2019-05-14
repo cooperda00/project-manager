@@ -16,14 +16,13 @@ Route::group(["middleware" => "auth:api"], function(){
 //Task
 Route::get('tasks', 'TaskController@index');
 
-Route::post('tasks', 'TaskController@store');
-
 Route::put('tasks/{task}', 'TaskController@markAsCompleted');
-
 Route::delete('tasks/{task}', 'TaskController@destroy');
 
-// Route::group(["middleware" => "auth:api"], function(){
+Route::post('tasks', 'TaskController@store');
 
+// Route::group(["middleware" => "auth:api"], function(){
+    
 // });
 
 //Auth
