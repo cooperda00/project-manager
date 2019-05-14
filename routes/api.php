@@ -28,6 +28,7 @@ Route::post('tasks', 'TaskController@store');
 //Auth
 Route::post("/register", "AuthController@register");
 Route::post("/login", "AuthController@login");
+
 Route::group(["middleware" => "auth:api"], function(){
     Route::post("/logout", "AuthController@logout");
 });
