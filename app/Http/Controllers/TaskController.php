@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Task;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,7 @@ class TaskController extends Controller
 
     public function index()
     {
+
         $tasks = Task::orderBy("created_at", "desc")
                             ->get();
 

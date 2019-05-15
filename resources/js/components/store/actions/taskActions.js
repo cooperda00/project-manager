@@ -1,7 +1,15 @@
 export const getAllTasks = () => {
     return dispatch => {
-        axios
-            .get("/api/tasks")
+        const token = window.localStorage.getItem("token");
+
+        axios({
+            url: "/api/tasks",
+            method: "GET",
+            headers: {
+                authorization: `Bearer ${token}`,
+                accept: "application/json"
+            }
+        })
             .then(res => {
                 dispatch({
                     type: "GET_ALL_TASKS",
@@ -19,8 +27,17 @@ export const getAllTasks = () => {
 
 export const addTask = payload => {
     return dispatch => {
-        axios
-            .post(`/api/tasks`, payload)
+        const token = window.localStorage.getItem("token");
+
+        axios({
+            url: "/api/tasks",
+            method: "POST",
+            headers: {
+                authorization: `Bearer ${token}`,
+                accept: "application/json"
+            },
+            data: payload
+        })
             .then(res => {
                 dispatch({
                     type: "ADD_TASK",
@@ -38,8 +55,16 @@ export const addTask = payload => {
 
 export const markAsComplete = id => {
     return dispatch => {
-        axios
-            .put(`/api/tasks/${id}`)
+        const token = window.localStorage.getItem("token");
+
+        axios({
+            url: `/api/tasks/${id}`,
+            method: "PUT",
+            headers: {
+                authorization: `Bearer ${token}`,
+                accept: "application/json"
+            }
+        })
             .then(res => {
                 dispatch({
                     type: "MARK_AS_COMPLETE",
@@ -57,8 +82,16 @@ export const markAsComplete = id => {
 
 export const deleteTask = id => {
     return dispatch => {
-        axios
-            .delete(`/api/tasks/${id}`)
+        const token = window.localStorage.getItem("token");
+
+        axios({
+            url: `/api/tasks/${id}`,
+            method: "DELETE",
+            headers: {
+                authorization: `Bearer ${token}`,
+                accept: "application/json"
+            }
+        })
             .then(res => {
                 dispatch({
                     type: "DELETE_TASK",

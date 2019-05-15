@@ -11,19 +11,13 @@ Route::group(["middleware" => "auth:api"], function(){
     Route::delete('projects/{project}', 'ProjectController@destroy');
 });
 
-
-
 //Task
-Route::get('tasks', 'TaskController@index');
-
-Route::put('tasks/{task}', 'TaskController@markAsCompleted');
-Route::delete('tasks/{task}', 'TaskController@destroy');
-
-Route::post('tasks', 'TaskController@store');
-
-// Route::group(["middleware" => "auth:api"], function(){
-    
-// });
+Route::group(["middleware" => "auth:api"], function(){
+    Route::get('tasks', 'TaskController@index');
+    Route::post('tasks', 'TaskController@store');
+    Route::put('tasks/{task}', 'TaskController@markAsCompleted');
+    Route::delete('tasks/{task}', 'TaskController@destroy');
+});
 
 //Auth
 Route::post("/register", "AuthController@register");

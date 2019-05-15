@@ -89525,7 +89525,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98337,7 +98337,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteTask", function() { return deleteTask; });
 var getAllTasks = function getAllTasks() {
   return function (dispatch) {
-    axios.get("/api/tasks").then(function (res) {
+    var token = window.localStorage.getItem("token");
+    axios({
+      url: "/api/tasks",
+      method: "GET",
+      headers: {
+        authorization: "Bearer ".concat(token),
+        accept: "application/json"
+      }
+    }).then(function (res) {
       dispatch({
         type: "GET_ALL_TASKS",
         payload: res.data
@@ -98352,7 +98360,16 @@ var getAllTasks = function getAllTasks() {
 };
 var addTask = function addTask(payload) {
   return function (dispatch) {
-    axios.post("/api/tasks", payload).then(function (res) {
+    var token = window.localStorage.getItem("token");
+    axios({
+      url: "/api/tasks",
+      method: "POST",
+      headers: {
+        authorization: "Bearer ".concat(token),
+        accept: "application/json"
+      },
+      data: payload
+    }).then(function (res) {
       dispatch({
         type: "ADD_TASK",
         message: res.data
@@ -98367,7 +98384,15 @@ var addTask = function addTask(payload) {
 };
 var markAsComplete = function markAsComplete(id) {
   return function (dispatch) {
-    axios.put("/api/tasks/".concat(id)).then(function (res) {
+    var token = window.localStorage.getItem("token");
+    axios({
+      url: "/api/tasks/".concat(id),
+      method: "PUT",
+      headers: {
+        authorization: "Bearer ".concat(token),
+        accept: "application/json"
+      }
+    }).then(function (res) {
       dispatch({
         type: "MARK_AS_COMPLETE",
         message: res.data
@@ -98382,7 +98407,15 @@ var markAsComplete = function markAsComplete(id) {
 };
 var deleteTask = function deleteTask(id) {
   return function (dispatch) {
-    axios["delete"]("/api/tasks/".concat(id)).then(function (res) {
+    var token = window.localStorage.getItem("token");
+    axios({
+      url: "/api/tasks/".concat(id),
+      method: "DELETE",
+      headers: {
+        authorization: "Bearer ".concat(token),
+        accept: "application/json"
+      }
+    }).then(function (res) {
       dispatch({
         type: "DELETE_TASK",
         message: res.data
