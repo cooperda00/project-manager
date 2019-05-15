@@ -1,10 +1,18 @@
 @import "../../variables";
 
 .Nav {
-    @include flex(row, space-around, center);
-    // width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    justify-items: center;
+    grid-row-gap: 1rem;
     a {
         margin: 0 1rem;
+    }
+
+    @include min-width(500px) {
+        @include flex(row, space-around, center);
     }
 }
 
